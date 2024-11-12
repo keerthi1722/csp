@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Support Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Student Support Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
+                <li><a href="#mental-health">Mental Health</a></li>
+                <li><a href="#goal-tracker">Goal Tracker</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="introduction">
+        <h2>Our Mission</h2>
+        <p>We provide resources, mentorship, and support to help at-risk students stay engaged and succeed in school.</p>
+    </section>
+    <section id="resources">
+        <h2>Educational Resources</h2>
+        <ul>
+            <li><a href="#">Study Tips and Guides</a></li>
+            <li><a href="#">Subject-Specific Help (Math, Science, English)</a></li>
+            <li><a href="#">Financial Aid Information</a></li>
+        </ul>
+    </section>
+    <section id="mentorship">
+        <h2>Join the Mentorship Program</h2>
+        <p>Sign up for personalized academic and emotional support.</p>
+        <form action="#" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+    
+            <label for="area-of-help">What do you need help with?</label>
+            <select id="area-of-help" name="area-of-help">
+                <option value="academic">Academic</option>
+                <option value="emotional">Emotional Support</option>
+                <option value="both">Both</option>
+            </select><br><br>
+    
+            <input type="submit" value="Sign Up">
+        </form>
+    </section>
+    <!-- Mental Health Section -->
+<section id="mental-health">
+    <h2>Mental Health & Well-being</h2>
+    
+    <!-- Resources -->
+    <div class="resources">
+        <h3>Resources for Mental Health Support</h3>
+        <ul>
+            <li><a href="https://www.mentalhealth.gov/">Mental Health Government Resources</a></li>
+            <li><a href="https://www.7cups.com/">7 Cups - Free Online Therapy and Counseling</a></li>
+            <li><a href="https://www.calm.com/">Calm - Meditation and Relaxation</a></li>
+            <li><a href="https://www.headspace.com/">Headspace - Guided Meditation</a></li>
+        </ul>
+    </div>
+    
+    <!-- Self-Care Tips -->
+    <div class="self-care-tips">
+        <h3>Self-Care Tips</h3>
+        <ul>
+            <li>Practice mindfulness through deep breathing exercises.</li>
+            <li>Stay physically active to reduce stress and anxiety.</li>
+            <li>Try journaling or writing about your emotions.</li>
+            <li>Reach out to friends, family, or a counselor when you feel overwhelmed.</li>
+            <li>Make time for hobbies or activities that bring you joy.</li>
+        </ul>
+    </div>
+    
+    <!-- Self-Assessment Quiz -->
+    <div class="quiz">
+        <h3>How Are You Feeling? (Self-Assessment Quiz)</h3>
+        <form id="mental-health-quiz">
+            <ol>
+                <li>
+                    <label for="stress-level">How often do you feel stressed or anxious?</label><br>
+                    <input type="radio" id="stress-rarely" name="stress-level" value="Rarely">
+                    <label for="stress-rarely">Rarely</label><br>
+                    <input type="radio" id="stress-sometimes" name="stress-level" value="Sometimes">
+                    <label for="stress-sometimes">Sometimes</label><br>
+                    <input type="radio" id="stress-often" name="stress-level" value="Often">
+                    <label for="stress-often">Often</label><br>
+                </li>
+                <li>
+                    <label for="sleep-quality">How would you rate your sleep quality?</label><br>
+                    <input type="radio" id="sleep-good" name="sleep-quality" value="Good">
+                    <label for="sleep-good">Good</label><br>
+                    <input type="radio" id="sleep-okay" name="sleep-quality" value="Okay">
+                    <label for="sleep-okay">Okay</label><br>
+                    <input type="radio" id="sleep-poor" name="sleep-quality" value="Poor">
+                    <label for="sleep-poor">Poor</label><br>
+                </li>
+                <li>
+                    <label for="mood">How would you describe your mood most days?</label><br>
+                    <input type="radio" id="mood-positive" name="mood" value="Positive">
+                    <label for="mood-positive">Positive</label><br>
+                    <input type="radio" id="mood-neutral" name="mood" value="Neutral">
+                    <label for="mood-neutral">Neutral</label><br>
+                    <input type="radio" id="mood-negative" name="mood" value="Negative">
+                    <label for="mood-negative">Negative</label><br>
+                </li>
+            </ol>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+        <div id="quiz-result"></div>
+    </div>
+    
+   </section>
+    <!-- Goal Tracker Section -->
+<section id="goal-tracker">
+    <h2>Goal Tracker</h2>
+    <p>Set your academic and personal goals, track your progress, and stay motivated!</p>
+
+    <!-- Add Goal Form -->
+    <div class="goal-form">
+        <input type="text" id="new-goal" placeholder="Enter a new goal..." />
+        <button id="add-goal-btn">Add Goal</button>
+    </div>
+
+    <!-- Display Goals -->
+    <div id="goal-list">
+        <h3>Your Goals</h3>
+        <ul id="goal-items"></ul>
+    </div>
+
+    <!-- Progress Section -->
+    <div id="progress-section">
+        <h3>Overall Progress</h3>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="progress-text">0% of your goals are completed</p>
+    </div>
+</section>
+
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="post">
+            <label for="contact-name">Your Name:</label>
+            <input type="text" id="contact-name" name="name" required><br><br>
+            
+            <label for="contact-email">Your Email:</label>
+            <input type="email" id="contact-email" name="email" required><br><br>
+    
+            <label for="contact-message">Your Message:</label>
+            <textarea id="contact-message" name="message" required></textarea><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+                
+
+    <footer>
+        <p>Contact us at info@studentsupport.org</p>
+    </footer>
+</body>
+</html>
